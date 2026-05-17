@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revelio SHIBUYA - SP Trace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260516zU">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Revelio SHIBUYA">
+        <img src="assets/logo.png" alt="Revelio SHIBUYA ロゴ">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+      <ul>
+        <li><a href="#cast">キャスト</a></li>
+        <li><a href="#">メニュー</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#sns">SNS</a></li>
+      </ul>
+    </nav>
+    <div class="backdrop"></div>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg">
+          <img src="assets/hero-fv.png" alt="Revelio キャスト写真">
+        </div>
+      </section>
+      <section class="hero-message">
+        <p class="hero-copy">新宿駅から徒歩7分<br>2.5次元の世界へログイン<br>Un:dress</p>
+      </section>
+
+      <section class="section" id="cast">
+        <h2 class="section-title">Cast</h2>
+        <div class="cast-carousel" data-loop-carousel>
+          <button class="cast-nav prev" type="button" aria-label="前のキャスト">‹</button>
+          <div class="cast-viewport">
+            <ul class="cast-track">
+              <li class="cast-slide"><img src="assets/cast-1.jpeg" alt="キャスト写真 1"></li>
+              <li class="cast-slide"><img src="assets/cast-2.jpeg" alt="キャスト写真 2"></li>
+              <li class="cast-slide"><img src="assets/cast-3.jpeg" alt="キャスト写真 3"></li>
+              <li class="cast-slide"><img src="assets/cast-4.jpeg" alt="キャスト写真 4"></li>
+            </ul>
+          </div>
+          <button class="cast-nav next" type="button" aria-label="次のキャスト">›</button>
+        </div>
+        <div class="cast-dots" role="tablist" aria-label="キャストスライド">
+          <button class="cast-dot is-active" type="button" aria-label="1枚目"></button>
+          <button class="cast-dot" type="button" aria-label="2枚目"></button>
+          <button class="cast-dot" type="button" aria-label="3枚目"></button>
+          <button class="cast-dot" type="button" aria-label="4枚目"></button>
+        </div>
+        <div class="cast-actions">
+          <a class="cast-action button" href="cast.html">キャスト一覧</a>
+          <a class="cast-action button" href="#">出勤キャストをチェック</a>
+        </div>
+      </section>
+
+      <section class="section" id="access">
+        <h2 class="section-title">Access</h2>
+        <div class="access-block">
+          <p class="store-name">新宿コンカフェ<br><span class="store-main-name">Un:dress（アンドレス）</span></p>
+          <p>東京都新宿区歌舞伎町２丁目２２<br>叙々苑 新宿ビルII​​</p>
+          <p>※JR線・銀座線・京王井の頭<br>「渋谷駅」ハチ公口から徒歩約5分</p>
+          <p>※半蔵門線・副都心線・田園都市線・東横線<br>「渋谷駅」A2出口から徒歩約3分</p>
+          <p>営業時間：<br>18:00-25:00（l.o.24:00）</p>
+          <p>店舗座席予約専用ダイヤル（18:00-25:00）：<br>03-0000-0000</p>
+          <div class="access-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.227726721884!2d139.70120687584614!3d35.69601327258241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd8584c8573%3A0x649332fd3df42106!2z44CSMTYwLTAwMjEg5p2x5Lqs6YO95paw5a6_5Yy65q2M6Iie5LyO55S677yS5LiB55uu77yS77ySIOWPmeOAheiLkSDmlrDlrr_jg5Pjg6tJSQ!5e0!3m2!1sja!2sjp!4v1778932013272!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="event">
+        <h2 class="section-title">Event</h2>
+        <div class="event-list">
+          <article class="event-card placeholder">EVENT BANNER</article>
+        </div>
+      </section>
+
+      <section class="section concept">
+        <div class="media tall">
+          <img src="assets/hero-fv.png" alt="コンセプトイメージ">
+        </div>
+        <h2>〇〇のコンセプトカフェ</h2>
+        <p>コンセプトの説明文</p>
+      </section>
+
+      <section class="section" id="sns">
+        <h2 class="section-title">SNS</h2>
+        <div class="sns-grid">
+          <article class="sns-card">
+            <h3>X</h3>
+            <iframe
+              class="sns-embed"
+              title="X仮埋め込み"
+              src="https://x.com/example"
+              loading="lazy"
+            ></iframe>
+          </article>
+          <article class="sns-card">
+            <h3>Instagram</h3>
+            <iframe
+              class="sns-embed"
+              title="Instagram仮埋め込み"
+              src="https://www.instagram.com/example/"
+              loading="lazy"
+            ></iframe>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <div class="cast-carousel" data-loop-carousel>
+          <button class="cast-nav prev" type="button" aria-label="前のギャラリー">‹</button>
+          <div class="cast-viewport">
+            <ul class="cast-track">
+              <li class="cast-slide gallery-slide"><span>GALLERY</span></li>
+              <li class="cast-slide gallery-slide"><span>GALLERY</span></li>
+              <li class="cast-slide gallery-slide"><span>GALLERY</span></li>
+              <li class="cast-slide gallery-slide"><span>GALLERY</span></li>
+            </ul>
+          </div>
+          <button class="cast-nav next" type="button" aria-label="次のギャラリー">›</button>
+        </div>
+        <div class="cast-dots" role="tablist" aria-label="ギャラリースライド">
+          <button class="cast-dot is-active" type="button" aria-label="1枚目"></button>
+          <button class="cast-dot" type="button" aria-label="2枚目"></button>
+          <button class="cast-dot" type="button" aria-label="3枚目"></button>
+          <button class="cast-dot" type="button" aria-label="4枚目"></button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-place">新宿コンカフェ</p>
+      <p class="footer-name">Un:dress（アンドレス）</p>
+      <div class="footer-socials">
+        <a href="#" class="social-icon" aria-label="X">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L1 2h6.2l4.3 5.7L18.9 2Z"></path>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 1.9A3.3 3.3 0 0 0 3.9 7.2v9.6a3.3 3.3 0 0 0 3.3 3.3h9.6a3.3 3.3 0 0 0 3.3-3.3V7.2a3.3 3.3 0 0 0-3.3-3.3H7.2Zm10.2 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Z"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-policy"><a href="#">プライバシーポリシー</a></p>
+      <p class="footer-copy">Copyright "Un:dress" all rights reserved.</p>
+    </footer>
+  </div>
+
+  <a class="route-fixed-button" href="https://maps.app.goo.gl/XBom7MBDxZdv6wz77" target="_blank" rel="noopener noreferrer">
+    <img src="assets/route-marker.png" alt="" aria-hidden="true">
+    <span>現在地からのルート</span>
+  </a>
+
+  <script src="script.js?v=20260516zU"></script>
+</body>
+</html>
