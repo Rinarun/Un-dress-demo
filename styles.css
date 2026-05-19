@@ -403,9 +403,9 @@ a {
   border-radius: 12px;
 }
 
-.concept .media img {
-  object-fit: contain;
-  object-position: center top;
+.concept .media {
+  border-radius: 24px;
+  overflow: hidden;
 }
 
 .lead {
