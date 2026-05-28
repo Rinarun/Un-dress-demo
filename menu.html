@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un:dress Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260528b">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="Un:dress">
+        <img src="assets/logo.png" alt="Un:dress ロゴ">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+      <ul>
+        <li><a href="index.html#cast">キャスト</a></li>
+        <li><a href="menu.html">メニュー</a></li>
+        <li><a href="index.html#access">アクセス</a></li>
+        <li><a href="index.html#sns">SNS</a></li>
+      </ul>
+    </nav>
+    <div class="backdrop"></div>
+
+    <main>
+      <section class="section menu-page-section">
+        <h1 class="section-title">System</h1>
+
+        <article class="menu-plan">
+          <p class="menu-subtitle">チャージ制 1h＋ワンドリンク</p>
+
+          <ul class="menu-list">
+            <li class="menu-row">
+              <span class="menu-label">カウンター席</span>
+              <span class="menu-price">1,500円（税抜）</span>
+            </li>
+            <li class="menu-row">
+              <span class="menu-label">ソファ席</span>
+              <span class="menu-price">2,000円（税抜）</span>
+            </li>
+            <li class="menu-row">
+              <span class="menu-label">VVIPソファ席</span>
+              <span class="menu-price">3,500円（税抜）</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="menu-plan">
+          <p class="menu-subtitle">飲み放題制</p>
+          <ul class="menu-list menu-list-single">
+            <li class="menu-row">
+              <span class="menu-label">1h</span>
+              <span class="menu-price">2,500円（チャージ込）（税抜）</span>
+            </li>
+            <li class="menu-row">
+              <span class="menu-label">2h</span>
+              <span class="menu-price">4,000円（チャージ込）（税抜）</span>
+            </li>
+            <li class="menu-row menu-row-note">
+              <span class="menu-note">（瓶ビールは最初の1本のみ含む）</span>
+            </li>
+          </ul>
+
+          <p class="menu-subnote-title">飲み放題時の席料金（追加）</p>
+          <ul class="menu-list menu-list-single">
+            <li class="menu-row">
+              <span class="menu-label">カウンター席</span>
+              <span class="menu-price">追加なし</span>
+            </li>
+            <li class="menu-row">
+              <span class="menu-label">ソファ席</span>
+              <span class="menu-price">＋1,000円（税抜）</span>
+            </li>
+            <li class="menu-row">
+              <span class="menu-label">VVIPソファ席</span>
+              <span class="menu-price">＋2,000円（税抜）</span>
+            </li>
+          </ul>
+        </article>
+
+        <section class="menu-notice-group" aria-label="注意事項">
+          <p class="menu-note menu-note-block">飲み物持ち込みNG</p>
+          <p class="menu-note menu-note-block">食べ物持ち込みは別途2,000円頂戴します。</p>
+          <p class="menu-note menu-note-block">別途、消費税10%かかります。</p>
+          <p class="menu-note menu-note-block menu-note-gap">なお、延長は1時間ごとの自動延長制となっております。</p>
+          <p class="menu-note menu-note-block">お時間の管理はお客様ご自身でお願いいたします。</p>
+        </section>
+
+        <section class="grand-menu-section" aria-labelledby="grand-menu-title">
+          <h2 class="section-title" id="grand-menu-title">Grand Menu</h2>
+
+          <div class="grand-menu-tabs" data-tab-switcher>
+            <div class="grand-menu-tablist" role="tablist" aria-label="Grand Menuタブ">
+              <button
+                class="grand-menu-tab is-active"
+                type="button"
+                role="tab"
+                id="tab-drink"
+                aria-controls="panel-drink"
+                aria-selected="true"
+                data-tab-target="panel-drink"
+              >ドリンクメニュー</button>
+              <button
+                class="grand-menu-tab"
+                type="button"
+                role="tab"
+                id="tab-recovery"
+                aria-controls="panel-recovery"
+                aria-selected="false"
+                data-tab-target="panel-recovery"
+              >回復アイテム</button>
+              <button
+                class="grand-menu-tab"
+                type="button"
+                role="tab"
+                id="tab-champagne"
+                aria-controls="panel-champagne"
+                aria-selected="false"
+                data-tab-target="panel-champagne"
+              >シャンパンメニュー</button>
+            </div>
+
+            <div class="grand-menu-panel-wrap">
+              <figure class="grand-menu-panel is-active" id="panel-drink" role="tabpanel" aria-labelledby="tab-drink">
+                <img src="assets/grand-drink-menu.png" alt="ドリンクメニュー画像" loading="lazy">
+              </figure>
+              <figure class="grand-menu-panel" id="panel-recovery" role="tabpanel" aria-labelledby="tab-recovery" hidden>
+                <img src="assets/grand-recovery-items.png" alt="回復アイテム画像" loading="lazy">
+              </figure>
+              <figure class="grand-menu-panel" id="panel-champagne" role="tabpanel" aria-labelledby="tab-champagne" hidden>
+                <img src="assets/grand-champagne-menu.png" alt="シャンパンメニュー画像" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-place">新宿コンカフェ</p>
+      <p class="footer-name">Un:dress（アンドレス）</p>
+      <div class="footer-socials">
+        <a href="https://x.com/undress_01" class="social-icon" aria-label="X" target="_blank" rel="noopener noreferrer">
+          <img src="assets/footer-x.png" alt="" aria-hidden="true">
+        </a>
+        <a href="https://www.instagram.com/undress_01/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <img src="assets/footer-instagram.png" alt="" aria-hidden="true">
+        </a>
+        <a href="https://www.tiktok.com/@undress_01" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <img src="assets/footer-tiktok.png" alt="" aria-hidden="true">
+        </a>
+      </div>
+      <p class="footer-policy"><a href="privacy.html">プライバシーポリシー</a></p>
+      <p class="footer-copy">Copyright "Un:dress" all rights reserved.</p>
+    </footer>
+  </div>
+
+  <a class="route-fixed-button" href="https://maps.app.goo.gl/XBom7MBDxZdv6wz77" target="_blank" rel="noopener noreferrer">
+    <img src="assets/route-marker.png" alt="" aria-hidden="true">
+    <span>現在地からのルート</span>
+  </a>
+
+  <script src="script.js?v=20260528b"></script>
+</body>
+</html>

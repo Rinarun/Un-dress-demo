@@ -17,12 +17,36 @@ function closeDrawer() {
   drawer.setAttribute("aria-hidden", "true");
 }
 
+function scrollToSectionFromHash(hash) {
+  if (!hash || !hash.startsWith("#")) {
+    return;
+  }
+  const target = document.querySelector(hash);
+  if (!target) {
+    return;
+  }
+  const headerHeight = document.querySelector(".site-header")?.offsetHeight ?? 0;
+  const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+}
+
 menuToggle.addEventListener("click", openDrawer);
 closeBtn.addEventListener("click", closeDrawer);
 backdrop.addEventListener("click", closeDrawer);
 
 drawerLinks.forEach((link) => {
-  link.addEventListener("click", closeDrawer);
+  link.addEventListener("click", (event) => {
+    const hash = link.getAttribute("href");
+    if (!hash || !hash.startsWith("#")) {
+      closeDrawer();
+      return;
+    }
+    event.preventDefault();
+    closeDrawer();
+    window.setTimeout(() => {
+      scrollToSectionFromHash(hash);
+    }, 120);
+  });
 });
 
 document.addEventListener("keydown", (event) => {
@@ -210,3 +234,125 @@ function initLoopCarousel(carousel) {
 document.querySelectorAll("[data-loop-carousel]").forEach((carousel) => {
   initLoopCarousel(carousel);
 });
+
+function initTabSwitcher(container) {
+  const tabs = Array.from(container.querySelectorAll("[role='tab'][data-tab-target]"));
+  const panels = Array.from(container.querySelectorAll("[role='tabpanel']"));
+
+  if (tabs.length === 0 || panels.length === 0) {
+    return;
+  }
+
+  function activateTab(nextTab) {
+    const targetId = nextTab.dataset.tabTarget;
+    if (!targetId) {
+      return;
+    }
+
+    tabs.forEach((tab) => {
+      const isActive = tab === nextTab;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.id === targetId;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activateTab(tab);
+    });
+  });
+}
+
+document.querySelectorAll("[data-tab-switcher]").forEach((container) => {
+  initTabSwitcher(container);
+});
+
+function initCastProfile() {
+  const profileRoot = document.querySelector("[data-cast-profile]");
+  if (!profileRoot) {
+    return;
+  }
+
+  const castData = {
+    "1": {
+      name: "CAST 01",
+      tag: "Sweet Smile",
+      image: "assets/cast-1.jpeg",
+      birthday: "3月1日",
+      height: "158cm",
+      like: "カフェラテ / アニメ",
+      message: "はじめまして。会いに来てくれたらうれしいです。"
+    },
+    "2": {
+      name: "CAST 02",
+      tag: "Cool Beauty",
+      image: "assets/cast-2.jpeg",
+      birthday: "7月12日",
+      height: "162cm",
+      like: "紅茶 / ゲーム",
+      message: "一緒に楽しい時間を過ごしましょう。"
+    },
+    "3": {
+      name: "CAST 03",
+      tag: "Playful Mood",
+      image: "assets/cast-3.jpeg",
+      birthday: "11月23日",
+      height: "155cm",
+      like: "音楽 / スイーツ",
+      message: "初めての方も気軽にログインしてね。"
+    },
+    "4": {
+      name: "CAST 04",
+      tag: "Elegant Charm",
+      image: "assets/cast-4.jpeg",
+      birthday: "5月9日",
+      height: "160cm",
+      like: "映画 / コスメ",
+      message: "特別な夜になるようにお手伝いします。"
+    }
+  };
+
+  const castId = new URLSearchParams(window.location.search).get("cast") || "1";
+  const profile = castData[castId] || castData["1"];
+
+  const image = profileRoot.querySelector("[data-cast-image]");
+  const name = profileRoot.querySelector("[data-cast-name]");
+  const tag = profileRoot.querySelector("[data-cast-tag]");
+  const birthday = profileRoot.querySelector("[data-cast-birthday]");
+  const height = profileRoot.querySelector("[data-cast-height]");
+  const like = profileRoot.querySelector("[data-cast-like]");
+  const message = profileRoot.querySelector("[data-cast-message]");
+
+  if (image) {
+    image.src = profile.image;
+    image.alt = `${profile.name} プロフィール画像`;
+  }
+  if (name) {
+    name.textContent = profile.name;
+  }
+  if (tag) {
+    tag.textContent = profile.tag;
+  }
+  if (birthday) {
+    birthday.textContent = profile.birthday;
+  }
+  if (height) {
+    height.textContent = profile.height;
+  }
+  if (like) {
+    like.textContent = profile.like;
+  }
+  if (message) {
+    message.textContent = profile.message;
+  }
+
+  document.title = `Un:dress ${profile.name} Profile`;
+}
+
+initCastProfile();

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un:dress Cast Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260529a">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="Un:dress">
+        <img src="assets/logo.png" alt="Un:dress ロゴ">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+      <ul>
+        <li><a href="index.html#cast">キャスト</a></li>
+        <li><a href="menu.html">メニュー</a></li>
+        <li><a href="index.html#access">アクセス</a></li>
+        <li><a href="index.html#sns">SNS</a></li>
+      </ul>
+    </nav>
+    <div class="backdrop"></div>
+
+    <main>
+      <section class="section cast-profile-section" data-cast-profile>
+        <p class="cast-profile-breadcrumb"><a href="cast.html">Cast List</a> / Profile</p>
+
+        <figure class="cast-profile-hero">
+          <img data-cast-image src="assets/cast-1.jpeg" alt="キャストプロフィール画像">
+        </figure>
+
+        <h1 class="cast-profile-name" data-cast-name>CAST 01</h1>
+        <p class="cast-profile-tag" data-cast-tag>Sweet Smile</p>
+
+        <dl class="cast-profile-table">
+          <div class="cast-profile-row">
+            <dt>誕生日</dt>
+            <dd data-cast-birthday>3月1日</dd>
+          </div>
+          <div class="cast-profile-row">
+            <dt>身長</dt>
+            <dd data-cast-height>158cm</dd>
+          </div>
+          <div class="cast-profile-row">
+            <dt>好きなもの</dt>
+            <dd data-cast-like>カフェラテ / アニメ</dd>
+          </div>
+          <div class="cast-profile-row">
+            <dt>ひとこと</dt>
+            <dd data-cast-message>はじめまして。会いに来てくれたらうれしいです。</dd>
+          </div>
+        </dl>
+
+        <div class="cast-profile-actions">
+          <a class="button cast-action" href="https://x.com/undress_01" target="_blank" rel="noopener noreferrer">出勤情報をチェック</a>
+          <a class="button cast-action" href="cast.html">キャスト一覧へ戻る</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-place">新宿コンカフェ</p>
+      <p class="footer-name">Un:dress（アンドレス）</p>
+      <div class="footer-socials">
+        <a href="https://x.com/undress_01" class="social-icon" aria-label="X" target="_blank" rel="noopener noreferrer">
+          <img src="assets/footer-x.png" alt="" aria-hidden="true">
+        </a>
+        <a href="https://www.instagram.com/undress_01/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <img src="assets/footer-instagram.png" alt="" aria-hidden="true">
+        </a>
+        <a href="https://www.tiktok.com/@undress_01" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <img src="assets/footer-tiktok.png" alt="" aria-hidden="true">
+        </a>
+      </div>
+      <p class="footer-policy"><a href="privacy.html">プライバシーポリシー</a></p>
+      <p class="footer-copy">Copyright "Un:dress" all rights reserved.</p>
+    </footer>
+  </div>
+
+  <a class="route-fixed-button" href="https://maps.app.goo.gl/XBom7MBDxZdv6wz77" target="_blank" rel="noopener noreferrer">
+    <img src="assets/route-marker.png" alt="" aria-hidden="true">
+    <span>現在地からのルート</span>
+  </a>
+
+  <script src="script.js?v=20260529a"></script>
+</body>
+</html>
